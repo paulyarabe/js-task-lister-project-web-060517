@@ -32,14 +32,14 @@ describe("List Model", function() {
 
       it("should be assigned an autoincrementing id when a new List is created", function() {
         expect(list.id).toBe(1);
-      });    
+      });
     });
 
     describe("tasks", function() {
 
       it("should be assigned an empty array when a new List is created", function() {
         expect(list.tasks).toEqual([]);
-      });      
+      });
     });
 
   }); //Instance Properties
