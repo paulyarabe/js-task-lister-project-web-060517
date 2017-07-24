@@ -6,7 +6,7 @@
     constructor(title) {
       this.title = title
       this.tasks = []
-      this.id = listCount++
+      this.id = ++listCount
       this.constructor.all.push(this)
     }
   }

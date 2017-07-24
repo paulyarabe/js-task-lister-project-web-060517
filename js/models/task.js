@@ -1,7 +1,5 @@
 // Task Model
 
-let taskCount = 0
-
 class Task {
   constructor(description, priority, list) {
     this.description = description
