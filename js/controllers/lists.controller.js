@@ -9,8 +9,10 @@ function createList() {
   option.value = list.id
   option.innerHTML = list.title
   $("#add_task").fadeIn();
+  list_item.innerHTML = list.title
   select.appendChild(option)
-  $("#list").appendTo(list_item)
+  section_lists = document.getElementById('lists')
+  section_lists.appendChild(list_item)
 }
 
 
