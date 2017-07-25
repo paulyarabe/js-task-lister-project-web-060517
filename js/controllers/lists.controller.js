@@ -17,21 +17,20 @@ function createList() {
     select.appendChild(option)
     //give me the selected option
 
-
   //make the section for lists at the bottom left part of page
   section_lists = document.getElementById('lists')
 
     let list_item = document.createElement('div')
     list_item.id = list.id
-    list_item.innerHTML = `${list.title}  <button>x</button>`
+    list_item.innerHTML = `${list.title}  <button class="dlt-list-btn">x</button>`
     section_lists.appendChild(list_item)
 
-  $("button").on('click', function(event){
+  $(".dlt-list-btn").on('click', function(event){
     event.preventDefault();
     let delete_me = $(this).closest('div')
     List.all.forEach(function(element, index){
       if(element.id == delete_me[0].id){
-        List.all.splice(index, 1)
+        List.all.splice(index, 1);
       }
     })
 

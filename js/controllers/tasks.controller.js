@@ -11,7 +11,7 @@ function createTask(listId) {
   task_item = document.createElement('li')
   let task_description = task.description
   let task_priority = task.priority
-  task_item.innerHTML = `${task_description}, ${task_priority} <button>x</button>`
+  task_item.innerHTML = `${task_description}, ${task_priority} <button class="dlt-task-btn">x</button>`
 
   //div id needs to equal option value
   //depending on the currently selected option (value), make list.id that.
@@ -21,10 +21,10 @@ function createTask(listId) {
   //   div_w_list_cn[i].appendChild(task_item)
   // }
 
-  $("button").on('click', function(event){
+  $(".dlt-task-btn").on('click', function(event){
     event.preventDefault();
     $(this).closest('li').remove();
-    //just takes the task off the page, but doesn't really remove it from the list of tasks.  
+    //just takes the task off the page, but doesn't really remove it from the list of tasks.
   })
 
 }
