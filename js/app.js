@@ -1,6 +1,7 @@
 $(function(){
 
   $("#add_list").on("submit", function(event) {
+    event.preventDefault()
     createList()
     this.reset()
   })
