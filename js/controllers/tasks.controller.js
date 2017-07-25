@@ -24,6 +24,7 @@ function createTask(listId) {
   $("button").on('click', function(event){
     event.preventDefault();
     $(this).closest('li').remove();
+    //just takes the task off the page, but doesn't really remove it from the list of tasks.  
   })
-  
+
 }

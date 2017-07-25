@@ -10,23 +10,31 @@ function createList() {
 
   //make the list appear in dropdown, give each option a value!
   select = document.getElementById("select_list")
-  let option = document.createElement('option')
-  option.value = list.id
-  option.innerHTML = list.title
-  select.appendChild(option)
-  //give me the selected option
+
+    let option = document.createElement('option')
+    option.value = list.id
+    option.innerHTML = list.title
+    select.appendChild(option)
+    //give me the selected option
 
 
   //make the section for lists at the bottom left part of page
   section_lists = document.getElementById('lists')
-  let list_item = document.createElement('div')
-  list_item.id = list.id
-  list_item.innerHTML = `${list.title}  <button>x</button>`
-  section_lists.appendChild(list_item)
+
+    let list_item = document.createElement('div')
+    list_item.id = list.id
+    list_item.innerHTML = `${list.title}  <button>x</button>`
+    section_lists.appendChild(list_item)
 
   $("button").on('click', function(event){
     event.preventDefault();
     let delete_me = $(this).closest('div')
+    List.all.forEach(function(element, index){
+      if(element.id == delete_me[0].id){
+        List.all.splice(index, 1)
+      }
+    })
+
     delete_me.remove();
     options = document.getElementsByTagName('option')
     real_options = [...options] //array
@@ -35,6 +43,7 @@ function createList() {
         element.remove();
       }
     })
+
   })
 
 }
