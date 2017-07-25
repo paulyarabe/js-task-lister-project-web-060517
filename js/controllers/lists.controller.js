@@ -22,7 +22,8 @@ function createList() {
 
     let list_item = document.createElement('div')
     list_item.id = list.id
-    list_item.innerHTML = `${list.title}  <button class="dlt-list-btn">x</button>`
+    list_item.className = "z-depth-4"
+    list_item.innerHTML = `${list.title}  <button class="dlt-list-btn waves-effect waves-light btn bg-primary">Delete List</button>`
     section_lists.appendChild(list_item)
 
   $(".dlt-list-btn").on('click', function(event){

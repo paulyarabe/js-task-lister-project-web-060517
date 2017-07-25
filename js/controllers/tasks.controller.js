@@ -3,7 +3,7 @@ function createTask(listId) {
 
   //make a new task with user input
   let description = $('[name="task_description"]').val();
-  let priority = $('[name="task_priority"]').val();
+  let priority = $('[value="1"]').val();
   //let listID = parseInt($('#select_list').val()) +> 0,1,2
   task = new Task(description, priority, list)
 
@@ -11,7 +11,7 @@ function createTask(listId) {
   task_item = document.createElement('li')
   let task_description = task.description
   let task_priority = task.priority
-  task_item.innerHTML = `${task_description}, ${task_priority} <button class="dlt-task-btn">x</button>`
+  task_item.innerHTML = `${task_description} <button class="dlt-task-btn waves-effect waves-light btn bg-primary">Delete Task</button>`
 
   //div id needs to equal option value
   //depending on the currently selected option (value), make list.id that.
