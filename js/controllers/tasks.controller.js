@@ -1,10 +1,11 @@
-function createTask(listId) {
-  event.preventDefault()
+function createTask() {
+
   let description = $('[name="task_description"]').val();
   let priority = $('[value="1"]').val();
   task = new Task(description, priority, list)
 
-  render(tasksHTML(this.list.tasks), `#${listId}`)
+  //render(tasksHTML(this.list.tasks), `#${listId}`)
+  render(listsHTML(List.all), '#lists') //need to re-render this right after so that the task will show up!
   //let task_priority = task.priority
 
 
@@ -21,9 +22,4 @@ function createTask(listId) {
   //   //just takes the task off the page, but doesn't really remove it from the list of tasks.
   // })
 
-}
-
-function render(html, into){
-  $(into).empty()
-  $(into).append(html)
 }
