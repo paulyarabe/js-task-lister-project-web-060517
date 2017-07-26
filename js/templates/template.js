@@ -1,4 +1,3 @@
-
 //render(listsHTML(List.all), '#lists')
 function listsHTML(lists){
   return List.all.map(function(list){
@@ -8,7 +7,8 @@ function listsHTML(lists){
 
 function listHTML(list){
   let tasks = tasksHTML(list.tasks)
-  return `<div id="0" class="z-depth-4">${list.title} <button class="dlt-list-btn waves-effect waves-light btn bg-primary">Delete List</button>${tasks}</div>`
+  selected = document.getElementById("select_list")
+  return `<div id="${listId}" class="z-depth-4">${list.title} <button class="dlt-list-btn waves-effect waves-light btn bg-primary">Delete List</button>${tasks}</div>`
 }
 
 function tasksHTML(tasks){

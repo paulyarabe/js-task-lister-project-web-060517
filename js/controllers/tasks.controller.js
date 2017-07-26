@@ -2,11 +2,9 @@ function createTask(listId) {
   event.preventDefault()
   let description = $('[name="task_description"]').val();
   let priority = $('[value="1"]').val();
-
   task = new Task(description, priority, list)
 
-  render(listsHTML(List.all), '#lists')
-
+  render(tasksHTML(this.list.tasks), `#${listId}`)
   //let task_priority = task.priority
 
 
