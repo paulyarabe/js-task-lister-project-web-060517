@@ -1,16 +1,11 @@
-// Task Model
-function createTask(){
-  var id = 0
 
-  return class Task {
-    constructor(description, priority, listId) {
+
+  class Task {
+    constructor(description, urgency, currentList) {
       this.description = description
-      this.priority = priority
-      this.listId = listId
-      this.id = ++id
-      store.tasks.push(this)
+      this.urgency = urgency
+      this.id = currentList.tasks.length
+      this.list = currentList
+      this.list.tasks.push(this)
     }
   }
-}
-
-var Task = createTask()

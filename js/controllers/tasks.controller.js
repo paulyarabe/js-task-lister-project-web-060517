@@ -1,25 +1,14 @@
+
 function createTask() {
 
   let description = $('[name="task_description"]').val();
-  let priority = $('[value="1"]').val();
-  task = new Task(description, priority, list)
+  let urgency = event.target.childNodes[11].value
+  //add this task to the list selected in the drop down
+  let listArray = List.all.filter(function(list){
+    return list.id === parseInt($('#select_list').val())
+  });
+  let currentList = listArray[0]
 
-  //render(tasksHTML(this.list.tasks), `#${listId}`)
-  render(listsHTML(List.all), '#lists') //need to re-render this right after so that the task will show up!
-  //let task_priority = task.priority
-
-
-  // div = document.getElementById(listId)
-  // div.appendChild(task_item)
-
-  // for(var i = 0; i < div_w_list_cn.length; i++){
-  //   div_w_list_cn[i].appendChild(task_item)
-  // }
-
-  // $(".dlt-task-btn").on('click', function(event){
-  //   event.preventDefault();
-  //   $(this).closest('li').remove();
-  //   //just takes the task off the page, but doesn't really remove it from the list of tasks.
-  // })
+  new Task(description, urgency, currentList)
 
 }

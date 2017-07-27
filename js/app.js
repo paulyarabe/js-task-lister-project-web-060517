@@ -1,28 +1,53 @@
-
-var store = {lists: [], tasks: []}
+function render_list_and_selections(){
+  render(listsHTML(List.all), '#lists')
+  render(selectionsHTML(List.all), '#select_list')
+}
 
 $(function(){
 
   $("#add_list").on("submit", function(event) {
     event.preventDefault()
-    let title = $('[name="list_title"]').val();
-    new List(title)
+    createList()
     $("#add_task").fadeIn();
-    render(listsHTML(store.lists), '#lists')
-    render(selectionsHTML(store.lists), '#select_list')
+    render_list_and_selections()
     this.reset()
   })
 
   $("#add_task").on("submit", function(event) {
     event.preventDefault()
-    let urgency = event.target.childNodes[11].value
-    let listId = parseInt($('#select_list').val())
-    let description = $('[name="task_description"]').val();
-    let priority = $('[value="1"]').val();
-    new Task(description, priority, listId)
-    render(listsHTML(store.lists), '#lists')
+    createTask()
+    render(listsHTML(List.all), '#lists')
     $('.text_field_input').val("")
   })
+
+  $('body').on('click', '.dlt-list-btn', function(event){
+    event.preventDefault();
+    //works fine until you delete out of order. then things get messy
+    //List.all.splice(this.parentElement.id, 1)
+    //works like a charm :)
+    delete List.all[this.parentElement.id]
+    render_list_and_selections()
+  })
+
+  $('body').on('click', '.dlt-task-btn', function(event){
+    event.preventDefault();
+    //through my div, get my list i belong to, and then find which tasks i am.
+    delete List.all[this.parentElement.parentElement.id].tasks[this.parentElement.id]
+    render_list_and_selections()
+  })
+
+    // let id = $(this).parent().parent().find("ul").data("id")
+    // list = List.find(id)
+    // list.destroy()
+    // render(listsHtml(store.lists), '#lists')
+    // render(selectionsHtml(store.lists), '#select_list')
+
+  // $(".dlt-task-btn").on('click', function(event){
+  //   debugger
+  //   event.preventDefault();
+  //   $(this).closest('li').remove();
+  //   //just takes the task off the page, but doesn't really remove it from the list of tasks.
+  // })
 
   // $(".dlt-list-btn").on('click', function(event){
   //   event.preventDefault();
