@@ -1,6 +1,6 @@
 function render_list_and_selections(){
-  render(listsHTML(List.all), '#lists')
-  render(selectionsHTML(List.all), '#select_list')
+  render(listsHTML(store.lists), '#lists')
+  render(selectionsHTML(store.lists), '#select_list')
 }
 
 $(function(){
@@ -16,23 +16,24 @@ $(function(){
   $("#add_task").on("submit", function(event) {
     event.preventDefault()
     createTask()
-    render(listsHTML(List.all), '#lists')
+    render(listsHTML(store.lists), '#lists')
     $('.text_field_input').val("")
   })
 
   $('body').on('click', '.dlt-list-btn', function(event){
     event.preventDefault();
     //works fine until you delete out of order. then things get messy
-    //List.all.splice(this.parentElement.id, 1)
-    //works like a charm :)
-    delete List.all[this.parentElement.id]
+    //store.lists.splice(this.parentElement.id, 1)
+    //List.all is all the lists, with their tasks.
+    //store is the copy.
+    delete store.lists[this.parentElement.id]
     render_list_and_selections()
   })
 
   $('body').on('click', '.dlt-task-btn', function(event){
     event.preventDefault();
-    //through my div, get my list i belong to, and then find which tasks i am.
-    delete List.all[this.parentElement.parentElement.id].tasks[this.parentElement.id]
+    //through my div, get my list i belong to, and then find which tasks i am not by id, which changes when i delete and sort, but by description maybe?  need to get this to work. 
+    delete store.lists[this.parentElement.parentElement.id].tasks[this.parentElement.id]
     render_list_and_selections()
   })
 
@@ -52,9 +53,9 @@ $(function(){
   // $(".dlt-list-btn").on('click', function(event){
   //   event.preventDefault();
   //   let delete_me = $(this).closest('div')
-  //   List.all.forEach(function(element, index){
+  //   store.lists.forEach(function(element, index){
   //     if(element.id == delete_me[0].id){
-  //       List.all.splice(index, 1);
+  //       store.lists.splice(index, 1);
   //     }
   //   })
   //   delete_me.remove();
