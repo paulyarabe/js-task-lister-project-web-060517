@@ -22,18 +22,24 @@ $(function(){
 
   $('body').on('click', '.dlt-list-btn', function(event){
     event.preventDefault();
-    //works fine until you delete out of order. then things get messy
-    //store.lists.splice(this.parentElement.id, 1)
-    //List.all is all the lists, with their tasks.
-    //store is the copy.
+    //List.all is all the lists, with their tasks. store is the copy.
     delete store.lists[this.parentElement.id]
     render_list_and_selections()
   })
 
   $('body').on('click', '.dlt-task-btn', function(event){
     event.preventDefault();
-    //through my div, get my list i belong to, and then find which tasks i am not by id, which changes when i delete and sort, but by description maybe?  need to get this to work. 
-    delete store.lists[this.parentElement.parentElement.id].tasks[this.parentElement.id]
+    //delete works, but it mutates the original list too..revisit.
+    let text = this.parentElement.childNodes[0].textContent
+    let itsList = store.lists[this.parentElement.parentElement.id]
+
+    itsList.tasks.map(task=>{
+      if(task.description === text){
+        delete itsList.tasks[itsList.tasks.indexOf(task)]
+      }
+    })
+
+    // itsList.tasks.splice(itsList.tasks.indexOf(text), 1)
     render_list_and_selections()
   })
 
