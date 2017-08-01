@@ -16,7 +16,16 @@ function tasksHTML(tasks){
   //that get sorted
   // sorted_tasks = tasks.sort(function(a,b) {return (a.urgency > b.urgency) ? 1 : ((b.urgency > a.urgency) ? -1 : 0);} )
   return tasks.map(function(task){
-    return `<li id="${task.id}">${task.description}<button class="dlt-task-btn waves-effect waves-light btn bg-primary">Delete Task</button></li>`
+    return `<li id="${task.id}">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">${task.description}<button class="dlt-task-btn waves-effect waves-light btn bg-primary">Delete Task</button><i class="material-icons right">more_vert</i></span>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">${task.description}<i class="material-icons right">close</i></span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+  </div></li>`
   }).join(' ')
 }
 

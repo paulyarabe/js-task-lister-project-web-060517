@@ -32,7 +32,7 @@ $(function(){
   $('body').on('click', '.dlt-task-btn', function(event){
     event.preventDefault();
     //through my div, get my list i belong to, and then find which tasks i am.
-    delete List.all[this.parentElement.parentElement.id].tasks[this.parentElement.id]
+    delete List.all[this.parentElement.parentElement.parentElement.parentElement.parentElement.id].tasks[this.parentElement.parentElement.parentElement.parentElement.id]
     render_list_and_selections()
   })
 
