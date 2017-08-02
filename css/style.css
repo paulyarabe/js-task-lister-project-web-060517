@@ -34,8 +34,20 @@ select {
 
 }
 
+.long-description {
+	font-size:2.0rem!important;
+}
+
 .waves-button-input {
 	font-size:.8rem!important;
+}
+
+.list-item-container {
+	margin-top:5px;
+}
+
+.list-title-divider {
+	margin-top:40px;
 }
 
 #wrapper {
@@ -47,7 +59,7 @@ select {
 form, #lists div {
 	background: rgba(255,255,255,.85);
 	padding:20px 30px;
-	margin:0 2% 2% 0;
+
 }
 
 .top-header {
@@ -58,12 +70,17 @@ form, #lists div {
 	text-align:right;
 	font-size:.8rem;
 	color:#000;
-	margin-top:20px;
 	margin-bottom:20px;
 }
 
 li {
-	margin-top:30px!important;
+	margin-top:20px!important;
+}
+
+.list-title {
+	margin-bottom:20px;
+	margin-top:20px;
+	font-size:1.4rem!important;
 }
 
 form, #lists div {

@@ -25,7 +25,7 @@ $(function(){
     //works fine until you delete out of order. then things get messy
     //List.all.splice(this.parentElement.id, 1)
     //works like a charm :)
-    delete List.all[this.parentElement.id]
+    delete List.all[this.parentElement.parentElement.id]
     render_list_and_selections()
   })
 

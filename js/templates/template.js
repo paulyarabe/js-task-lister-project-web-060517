@@ -7,7 +7,7 @@ function listsHTML(lists){
 
 function listHTML(list){
   let tasks = tasksHTML(list.tasks)
-  return `<div id="${list.id}" class="z-depth-4">${list.title} <button class="dlt-list-btn waves-effect waves-light btn bg-primary">Delete List</button><ul id="${list.id}">${tasks}</ul></div>`
+  return `<div id="${list.id}" class="z-depth-4 list-item-container"><h4 class="list-title">${list.title}<button class="dlt-list-btn waves-effect waves-light btn bg-primary">Delete List</button></h4> <hr class="list-title-divider"><ul id="${list.id}">${tasks}</ul></div>`
 }
 
 function tasksHTML(tasks){
@@ -19,7 +19,7 @@ function tasksHTML(tasks){
     return `<li id="${task.id}">
     <div class="card">
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">${task.description}<button class="dlt-task-btn waves-effect waves-light btn bg-primary">Delete Task</button><i class="material-icons right">more_vert</i></span>
+        <span class="card-title activator grey-text text-darken-4">${task.description}<i class="material-icons right long-description">more_vert</i><button class="dlt-task-btn waves-effect waves-light btn bg-primary">Delete Task</button></span>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">${task.description}<i class="material-icons right">close</i></span>
