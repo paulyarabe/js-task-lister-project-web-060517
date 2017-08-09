@@ -13,6 +13,38 @@ body {
 	padding:20px;
 }
 
+.side-nav {
+	overflow-y: visible;
+	width:600px;
+}
+
+textarea {
+	max-width:100%;
+	background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 600px;
+ height: 100%;
+ font: normal 14px verdana;
+ line-height: 25px;
+ padding: 2px 10px;
+ border: solid 1px #ddd;
+ padding-left:105px;
+}
+
+#sidenav-overlay {
+	background:transparent;
+}
+
+.right-menu-icon {
+	position:absolute;
+	right:-42px;
+	border-top-left-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+	top:50px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+}
 #lists div {
 	min-height:80px!important;
 }

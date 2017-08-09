@@ -17,6 +17,11 @@
 </head>
 <body>
   <div class="row">
+    <ul id="slide-out" class="side-nav">
+      <a href="#" data-activates="slide-out" class="waves-effect waves-light btn bg-primary waves-input-wrapper menu-icon right-menu-icon button-collapse"><i class="material-icons">edit</i></a>
+      <textarea name="name" rows="8" cols="80"></textarea>
+   </ul>
+
     <div class="container">
       <div class="col s12 top-header">
         <h1>my task list</h1>
@@ -54,5 +59,10 @@
     </div><!-- #container -->
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".button-collapse").sideNav();
+  })
+  </script>
 </body>
 </html>
