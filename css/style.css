@@ -13,6 +13,38 @@ body {
 	padding:20px;
 }
 
+.side-nav {
+	overflow-y: visible;
+	width:600px;
+}
+
+textarea {
+	max-width:100%;
+	background: url(http://i.stack.imgur.com/ynxjD.png) repeat-y;
+ width: 600px;
+ height: 100%;
+ font: normal 14px verdana;
+ line-height: 25px;
+ padding: 2px 10px;
+ border: solid 1px #ddd;
+ padding-left:105px;
+}
+
+#sidenav-overlay {
+	background:transparent;
+}
+
+.right-menu-icon {
+	position:absolute;
+	right:-42px;
+	border-top-left-radius: 0!important;
+	border-bottom-left-radius: 0!important;
+	top:130px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+}
 #lists div {
 	min-height:80px!important;
 }
@@ -34,8 +66,20 @@ select {
 
 }
 
+.long-description {
+	font-size:2.0rem!important;
+}
+
 .waves-button-input {
 	font-size:.8rem!important;
+}
+
+.list-item-container {
+	margin-top:5px;
+}
+
+.list-title-divider {
+	margin-top:40px;
 }
 
 #wrapper {
@@ -47,7 +91,7 @@ select {
 form, #lists div {
 	background: rgba(255,255,255,.85);
 	padding:20px 30px;
-	margin:0 2% 2% 0;
+
 }
 
 .top-header {
@@ -57,13 +101,18 @@ form, #lists div {
 .right {
 	text-align:right;
 	font-size:.8rem;
-	color:#fff;
-	margin-top:20px;
+	color:#000;
 	margin-bottom:20px;
 }
 
 li {
-	margin-top:30px!important;
+	margin-top:20px!important;
+}
+
+.list-title {
+	margin-bottom:20px;
+	margin-top:20px;
+	font-size:1.4rem!important;
 }
 
 form, #lists div {

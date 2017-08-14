@@ -22,8 +22,11 @@ $(function(){
 
   $('body').on('click', '.dlt-list-btn', function(event){
     event.preventDefault();
-    //List.all is all the lists, with their tasks. store is the copy.
-    delete store.lists[this.parentElement.id]
+
+    //works fine until you delete out of order. then things get messy
+    //List.all.splice(this.parentElement.id, 1)
+    //works like a charm :)
+    delete List.all[this.parentElement.parentElement.id]
     render_list_and_selections()
   })
 
@@ -40,6 +43,10 @@ $(function(){
     })
 
     // itsList.tasks.splice(itsList.tasks.indexOf(text), 1)
+=======
+    //through my div, get my list i belong to, and then find which tasks i am.
+    delete List.all[this.parentElement.parentElement.parentElement.parentElement.parentElement.id].tasks[this.parentElement.parentElement.parentElement.parentElement.id]
+>>>>>>> 7243adf109320bbbf5dae3303b6464588e9ea7dc
     render_list_and_selections()
   })
 

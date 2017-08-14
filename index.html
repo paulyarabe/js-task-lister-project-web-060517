@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>OO Task List</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/lib/jquery-2.1.1.min.js"></script>
@@ -16,6 +17,11 @@
 </head>
 <body>
   <div class="row">
+    <ul id="slide-out" class="side-nav">
+      <a href="#" data-activates="slide-out" class="waves-effect waves-light btn bg-primary waves-input-wrapper menu-icon right-menu-icon button-collapse"><i class="material-icons">edit</i></a>
+      <textarea name="name" rows="8" cols="80"></textarea>
+   </ul>
+
     <div class="container">
       <div class="col s12 top-header">
         <h1>my task list</h1>
@@ -27,7 +33,7 @@
       <div class="col s12 m12 l6">
         <form id="add_list" action="#" methos="post" class="z-depth-4">
           <label for="list_title">Add a new list:</label>
-          <input class="text_field_input" type="text" id="list_title" name="list_title" placeholder="title">
+          <input class="text_field_input" type="text" id="list_title" name="list_title" placeholder="title" required>
           <input class="waves-effect waves-light btn bg-primary" type="submit" value="(+) add">
         </form><!-- #add_list -->
       </div>
@@ -49,9 +55,14 @@
       </div>
 
       <section id="lists"></section>
-
     </div><!-- #container -->
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".button-collapse").sideNav();
+    $('ul.tabs').tabs('swipeable', 'true');
+  })
+  </script>
 </body>
 </html>
