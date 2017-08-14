@@ -26,27 +26,25 @@ $(function(){
     //works fine until you delete out of order. then things get messy
     //List.all.splice(this.parentElement.id, 1)
     //works like a charm :)
-    delete List.all[this.parentElement.parentElement.id]
+    delete store.lists[this.parentElement.parentElement.id]
     render_list_and_selections()
   })
 
   $('body').on('click', '.dlt-task-btn', function(event){
     event.preventDefault();
     //delete works, but it mutates the original list too..revisit.
-    let text = this.parentElement.childNodes[0].textContent
-    let itsList = store.lists[this.parentElement.parentElement.id]
-
-    itsList.tasks.map(task=>{
-      if(task.description === text){
-        delete itsList.tasks[itsList.tasks.indexOf(task)]
-      }
-    })
+    // let text = this.parentElement.childNodes[0].textContent
+    // let itsList = store.lists[this.parentElement.parentElement.id]
+    //
+    // itsList.tasks.map(task=>{
+    //   if(task.description === text){
+    //     delete itsList.tasks[itsList.tasks.indexOf(task)]
+    //   }
+    // })
 
     // itsList.tasks.splice(itsList.tasks.indexOf(text), 1)
-=======
     //through my div, get my list i belong to, and then find which tasks i am.
-    delete List.all[this.parentElement.parentElement.parentElement.parentElement.parentElement.id].tasks[this.parentElement.parentElement.parentElement.parentElement.id]
->>>>>>> 7243adf109320bbbf5dae3303b6464588e9ea7dc
+    delete store.lists[this.parentElement.parentElement.parentElement.parentElement.parentElement.id].tasks[this.parentElement.parentElement.parentElement.parentElement.id]
     render_list_and_selections()
   })
 

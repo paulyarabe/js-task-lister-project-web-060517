@@ -13,11 +13,11 @@ function listHTML(list){
 function tasksHTML(tasks){
   //TODO i want these tasks here in red below to be sorted by urgency
   //fuck this almost works, but when i delete tasks, it leaves undefined things that get sorted
-  sorted_tasks = tasks.sort(function(a,b) {return (a.urgency > b.urgency) ? 1 : ((b.urgency > a.urgency) ? -1 : 0);} )
+  // sorted_tasks = tasks.sort(function(a,b) {return (a.urgency > b.urgency) ? 1 : ((b.urgency > a.urgency) ? -1 : 0);} )
   //fuck this almost works, but when i delete tasks, it leaves undefined things
   //that get sorted
   // sorted_tasks = tasks.sort(function(a,b) {return (a.urgency > b.urgency) ? 1 : ((b.urgency > a.urgency) ? -1 : 0);} )
-  return sorted_tasks.map(function(task){
+  return tasks.map(function(task){
     return `<li id="${task.id}">
     <div class="card">
       <div class="card-content">
